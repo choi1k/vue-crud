@@ -8,9 +8,9 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import StepOne from './components/StepOne.vue'
-import StepThree from './components/StepThree.vue'
-import StepSix from './components/StepSix.vue'
+import StepOne from './components/tutorial/StepOne.vue'
+import StepThree from './components/tutorial/StepThree.vue'
+import StepSix from './components/tutorial/StepSix.vue'
 export default {
   name: 'App',
   components: {
