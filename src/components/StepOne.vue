@@ -17,6 +17,7 @@ export default {
 </script>
 
 <template>
+<H3>Step 1&2</H3>
   <h1 :class="titleClass">{{message.split('').reverse().join('')}}</h1>
   <button @click="increment">count is: {{ count }}</button>
 
