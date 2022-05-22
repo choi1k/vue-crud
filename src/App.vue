@@ -3,19 +3,21 @@
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <StepOne/>
   <StepThree/>
+  <StepSix/>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import StepOne from './components/StepOne.vue'
 import StepThree from './components/StepThree.vue'
-
+import StepSix from './components/StepSix.vue'
 export default {
   name: 'App',
   components: {
     // HelloWorld,
     StepOne,
-    StepThree
+    StepThree,
+    StepSix
     
   }
 }
