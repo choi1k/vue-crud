@@ -4,7 +4,13 @@ export default {
   data(){
     return {
       message:'Hello World!',
-      titleClass: 'title'
+      titleClass: 'title',
+      count: 0
+    }
+  },
+  methods:{
+    increment(){
+      this.count++
     }
   }
 }
@@ -12,6 +18,8 @@ export default {
 
 <template>
   <h1 :class="titleClass">{{message.split('').reverse().join('')}}</h1>
+  <button @click="increment">count is: {{ count }}</button>
+
 </template>
 
 <style>
