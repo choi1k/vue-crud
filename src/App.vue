@@ -1,35 +1,37 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <StepOne/>
-  <StepThree/>
-  <StepSix/>
+
+  <div id="app">
+    <Navbar />
+    <CRUD></CRUD>
+    <div class="container">
+      <!-- <router-view /> -->
+      <Users></Users>
+    </div>
+  </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import StepOne from './components/tutorial/StepOne.vue'
-import StepThree from './components/tutorial/StepThree.vue'
-import StepSix from './components/tutorial/StepSix.vue'
+
+import Navbar from '@/components/Navbar.vue'
+import CRUD from './components/CRUD.vue'
+import Users from './components/Users.vue'
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
-    StepOne,
-    StepThree,
-    StepSix
-    
-  }
+    Navbar,
+    CRUD,
+    Users
+}
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
+  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px; */
 }
 </style>
