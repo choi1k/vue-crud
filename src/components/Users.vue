@@ -8,10 +8,6 @@
             <div class="card-body">
                 <form class="form-inline" @submit.prevent="addUser">
                     <div class="form-group">
-                        <!-- <label>id: <input v-model="first"></label>
-                        <label>name: <input v-model="first"></label>
-                        <label>rank: <input v-model="first"></label> -->
-
                         <label class="form-label">ID</label>
                         <input v-model="id" type="text" class="form-control" required disabled>
                     </div>
@@ -20,25 +16,26 @@
                         <input v-model="name" type="text" class="form-control ml-sm-2 mr-sm-4 my-2" required>
                     </div>
                     <div class="form-group">
-                        <label>Job
-                        <!-- <input v-model="job" type="text" class="form-control ml-sm-2 mr-sm-4 my-2" required> -->
-                        <select v-model="job" class="form-select" aria-label="Default select example">
-                            <!-- <option selected>select job</option> -->
+                        <label>Job</label>
+                            <input v-model="job" type="text" class="form-control ml-sm-2 mr-sm-4 my-2" required>
+                            <!-- <select v-model="job" class="form-select" aria-label="Default select example">
                             <option value="Presient" disabled>President</option>
                             <option value="Manager">Manager</option>
                             <option value="Clerk">Clerk</option>
                             <option value="Salesman">Salesman</option>
-                        </select>
-                        </label>
+                        </select> -->
+
+                        
                     </div>
                     <div class="ml-auto text-right">
                         <button type="submit" class="btn btn-primary my-2">Add</button>
 
                     </div>
+                    
                 </form>
 
             </div>
-            
+
         </div>
         <div class="card mt-5">
             <div class="card-header">
@@ -62,9 +59,12 @@
                         </thead>
                         <tbody>
                             <tr v-for="u in users" v-bind:key="u.id">
-                                <td>{{u.id}}</td>
-                                <td>{{u.name}}</td>
-                                <td>{{u.job}}</td>
+                                <td>{{ u.id }}</td>
+                                <td>{{ u.name }}</td>
+                                <td>{{ u.job }}</td>
+                                <td>
+                                    <button @click="deleteUser(u)" class="btn btn-danger">Delete</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -79,8 +79,8 @@ export default {
     data() {
         return {
             users: [
-                {id: id++, name:'aaa', job:'President'},
-                {id: id++, name:'bbb', job:'Manager'}
+                { id: id++, name: 'aaa', job: 'President' },
+                { id: id++, name: 'bbb', job: 'Manager' }
             ],
             selected: '',
             prefix: '',
@@ -90,12 +90,15 @@ export default {
 
         }
     },
-    methods:{
-        addUser(){
-            this.users.push({id:id++, name: this.name, job: this.job})
-            this.name=''
-            this.job=''
+    methods: {
+        addUser() {
+            this.users.push({ id: id++, name: this.name, job: this.job })
+            this.name = ''
+            this.job = ''
             this.id = id
+        },
+        deleteUser(u) {
+            this.users = this.users.filter((t) => t !== u)
         }
     }
 }
