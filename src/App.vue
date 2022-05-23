@@ -2,10 +2,8 @@
 
   <div id="app">
     <Navbar />
-    <CRUD></CRUD>
     <div class="container">
-      <!-- <router-view /> -->
-      <Users></Users>
+      <router-view />
     </div>
   </div>
 </template>
